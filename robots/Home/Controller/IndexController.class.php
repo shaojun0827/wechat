@@ -3,7 +3,11 @@ namespace Home\Controller;
 use Think\Controller;
 class IndexController extends Controller {
     public function index(){
-        $this->valid();
+        if (isset($_GET["echostr"])) {
+            $this->valid();
+        } else {
+            $this->responseMsg();
+        }
     }
 
     public function valid() {
@@ -38,7 +42,7 @@ class IndexController extends Controller {
                             </xml>";
             if (!empty( $keyword )) {
                 $msgType = "text";
-                $contentStr = "Welcome to wechat world!";
+                $contentStr = "坡上立着一只鹅，坡下就是一条河。宽宽的河，肥肥的鹅，鹅要过河，河要渡鹅不知是鹅过河，还是河渡鹅？";
                 $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
                 echo $resultStr;
             } else {
