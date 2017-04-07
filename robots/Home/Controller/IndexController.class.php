@@ -56,7 +56,7 @@ class IndexController extends Controller {
         $timestamp = $_GET["timestamp"];
         $nonce     = $_GET["nonce"];    
                 
-        $token  = TOKEN;
+        $token  = C('WECHAT_TOKEN');
         $tmpArr = array($token, $timestamp, $nonce);
         sort($tmpArr);
         $tmpStr = implode(  $tmpArr );
