@@ -54,7 +54,7 @@ class IndexController extends Controller {
                             $title  = '重庆时时彩玩法介绍';
                             $descr  = '一学就会，还不来！';
                             $url    = 'http://www.168cpt.com/news/shishicai/artical_236.html';
-                            $picUrl = '/sth/img/cqssc.jpg';
+                            $picUrl = 'http://59.110.168.241/sth/img/cqssc.jpg';
                             $reStr  = sprintf($xml, $fromUsername, $toUsername, $time, $title, $descr, $picUrl, $url);
                             echo $reStr;
                             break;
