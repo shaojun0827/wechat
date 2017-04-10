@@ -58,6 +58,39 @@ class IndexController extends Controller {
                             $reStr  = sprintf($xml, $fromUsername, $toUsername, $time, $title, $descr, $picUrl, $url);
                             echo $reStr;
                             break;
+                        case '天津时时彩':
+                            $xml     = '<xml>
+                                            <ToUserName><![CDATA[%s]]></ToUserName>
+                                            <FromUserName><![CDATA[%s]]></FromUserName>
+                                            <CreateTime>%s</CreateTime>
+                                            <MsgType><![CDATA[news]]></MsgType>
+                                            <ArticleCount>2</ArticleCount>
+                                            <Articles>
+                                                <item>
+                                                    <Title><![CDATA[%s]]></Title> 
+                                                    <Description><![CDATA[%s]]></Description>
+                                                    <PicUrl><![CDATA[%s]]></PicUrl>
+                                                    <Url><![CDATA[%s]]></Url>
+                                                </item>
+                                                <item>
+                                                    <Title><![CDATA[%s]]></Title> 
+                                                    <Description><![CDATA[%s]]></Description>
+                                                    <PicUrl><![CDATA[%s]]></PicUrl>
+                                                    <Url><![CDATA[%s]]></Url>
+                                                </item>
+                                            </Articles>
+                                        </xml>';
+                            $title1  = '天津时时彩玩法介绍1';
+                            $title2  = '天津时时彩玩法介绍2';
+                            $descr1  = '天津时时彩1————好玩！';
+                            $descr2  = '天津时时彩2————好玩！';
+                            $url1    = 'http://www.168cpt.com/news/shishicai/artical_93.html';
+                            $url2    = 'http://www.168cpt.com/news/shishicai/artical_174.html';
+                            $picUrl1 = 'http://59.110.168.241/sth/img/tjssc1.jpg';
+                            $picUrl2 = 'http://59.110.168.241/sth/img/tjssc2.jpg';
+                            $reStr  = sprintf($xml, $fromUsername, $toUsername, $time, $title1, $descr1, $picUrl1, $url1, $title2, $descr2, $picUrl2, $url2);
+                            echo $reStr;
+                            break;
                         default:
                             break;
                     }
@@ -65,22 +98,6 @@ class IndexController extends Controller {
                 default:
                     break;
             }
-            // $textTpl      = "<xml>
-            //                     <ToUserName><![CDATA[%s]]></ToUserName>
-            //                     <FromUserName><![CDATA[%s]]></FromUserName>
-            //                     <CreateTime>%s</CreateTime>
-            //                     <MsgType><![CDATA[%s]]></MsgType>
-            //                     <Content><![CDATA[%s]]></Content>
-            //                     <FuncFlag>0</FuncFlag>
-            //                 </xml>";
-            // if (!empty($content)) {
-            //     $msgType = "text";
-            //     $contentStr = "坡上立着一只鹅，坡下就是一条河。宽宽的河，肥肥的鹅，鹅要过河，河要渡鹅不知是鹅过河，还是河渡鹅？";
-            //     $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
-            //     echo $resultStr;
-            // } else {
-            //     echo "Input something...";
-            // }
         } else {
             echo "";
             exit;
