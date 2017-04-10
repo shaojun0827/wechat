@@ -65,22 +65,22 @@ class IndexController extends Controller {
                 default:
                     break;
             }
-            $textTpl      = "<xml>
-                                <ToUserName><![CDATA[%s]]></ToUserName>
-                                <FromUserName><![CDATA[%s]]></FromUserName>
-                                <CreateTime>%s</CreateTime>
-                                <MsgType><![CDATA[%s]]></MsgType>
-                                <Content><![CDATA[%s]]></Content>
-                                <FuncFlag>0</FuncFlag>
-                            </xml>";
-            if (!empty($content)) {
-                $msgType = "text";
-                $contentStr = "坡上立着一只鹅，坡下就是一条河。宽宽的河，肥肥的鹅，鹅要过河，河要渡鹅不知是鹅过河，还是河渡鹅？";
-                $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
-                echo $resultStr;
-            } else {
-                echo "Input something...";
-            }
+            // $textTpl      = "<xml>
+            //                     <ToUserName><![CDATA[%s]]></ToUserName>
+            //                     <FromUserName><![CDATA[%s]]></FromUserName>
+            //                     <CreateTime>%s</CreateTime>
+            //                     <MsgType><![CDATA[%s]]></MsgType>
+            //                     <Content><![CDATA[%s]]></Content>
+            //                     <FuncFlag>0</FuncFlag>
+            //                 </xml>";
+            // if (!empty($content)) {
+            //     $msgType = "text";
+            //     $contentStr = "坡上立着一只鹅，坡下就是一条河。宽宽的河，肥肥的鹅，鹅要过河，河要渡鹅不知是鹅过河，还是河渡鹅？";
+            //     $resultStr = sprintf($textTpl, $fromUsername, $toUsername, $time, $msgType, $contentStr);
+            //     echo $resultStr;
+            // } else {
+            //     echo "Input something...";
+            // }
         } else {
             echo "";
             exit;
